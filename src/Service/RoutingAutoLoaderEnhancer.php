@@ -2,7 +2,6 @@
 
 namespace Tourze\RoutingAutoLoaderBundle\Service;
 
-use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsDecorator;
@@ -26,9 +25,9 @@ class RoutingAutoLoaderEnhancer implements LoaderInterface
         /** @var RouteCollection $collection */
 
         foreach ($this->routingAutoLoaders as $autoloader) {
-            assert($autoloader instanceof Loader);
-            assert($autoloader instanceof RoutingAutoLoaderInterface);
-            $collection->addCollection($autoloader->autoload());
+            if ($autoloader instanceof RoutingAutoLoaderInterface) {
+                $collection->addCollection($autoloader->autoload());
+            }
         }
 
         return $collection;
