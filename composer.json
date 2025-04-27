@@ -1,0 +1,28 @@
+{
+  "name": "tourze/symfony-routing-auto-loader-bundle",
+  "description": "",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "require": {
+    "symfony/config": "^6.4",
+    "symfony/dependency-injection": "^6.4",
+    "symfony/routing": "^6.4",
+    "symfony/http-kernel": "^6.4",
+    "symfony/yaml": "^6.4 || ^7.1",
+    "symfony/framework-bundle": "^6.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tourze\\RoutingAutoLoaderBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tourze\\RoutingAutoLoaderBundle\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^10.0"
+  }
+}
