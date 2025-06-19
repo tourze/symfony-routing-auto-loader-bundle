@@ -22,8 +22,8 @@ class RoutingAutoLoaderEnhancer implements LoaderInterface
     public function load(mixed $resource, ?string $type = null): RouteCollection
     {
         $collection = $this->inner->load($resource, $type);
-        /** @var RouteCollection $collection */
 
+        /** @var RoutingAutoLoaderInterface $autoloader */
         foreach ($this->routingAutoLoaders as $autoloader) {
             if ($autoloader instanceof RoutingAutoLoaderInterface) {
                 $collection->addCollection($autoloader->autoload());
