@@ -14,7 +14,7 @@ class RoutingAutoLoaderEnhancer implements LoaderInterface
 {
     public function __construct(
         #[AutowireDecorated] private readonly LoaderInterface $inner,
-        #[TaggedIterator(RoutingAutoLoaderInterface::TAG_NAME)] private readonly iterable $routingAutoLoaders,
+        #[TaggedIterator(tag: RoutingAutoLoaderInterface::TAG_NAME)] private readonly iterable $routingAutoLoaders,
     )
     {
     }
