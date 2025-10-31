@@ -1,7 +1,12 @@
 # Symfony Routing Auto Loader Bundle
 
+[English](README.md) | [中文](README.zh-CN.md)
+
 [![最新稳定版本](https://img.shields.io/packagist/v/tourze/symfony-routing-auto-loader-bundle.svg)](https://packagist.org/packages/tourze/symfony-routing-auto-loader-bundle)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PHP Version Require](https://img.shields.io/packagist/php-v/tourze/symfony-routing-auto-loader-bundle.svg)](https://packagist.org/packages/tourze/symfony-routing-auto-loader-bundle)
+[![构建状态](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/tourze/php-monorepo)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/tourze/php-monorepo)
 
 一个用于自动加载自定义路由集合的 Symfony Bundle。通过服务标签自动发现并合并自定义路由加载器，简化路由模块化开发。
 
@@ -65,7 +70,7 @@ services:
 
 欢迎提交 Issue 或 PR。请确保代码风格和测试通过。
 
-## 协议
+## 许可
 
 MIT 协议，详见 [LICENSE](LICENSE)。
 

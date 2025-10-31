@@ -1,20 +1,29 @@
 <?php
 
-namespace Tourze\RoutingAutoLoaderBundle\Tests\Unit\DependencyInjection;
+namespace Tourze\RoutingAutoLoaderBundle\Tests\DependencyInjection;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Tourze\PHPUnitSymfonyUnitTest\AbstractDependencyInjectionExtensionTestCase;
 use Tourze\RoutingAutoLoaderBundle\DependencyInjection\RoutingAutoLoaderExtension;
 
-class RoutingAutoLoaderExtensionTest extends TestCase
+/**
+ * @internal
+ */
+#[CoversClass(RoutingAutoLoaderExtension::class)]
+final class RoutingAutoLoaderExtensionTest extends AbstractDependencyInjectionExtensionTestCase
 {
     private RoutingAutoLoaderExtension $extension;
+
     private ContainerBuilder $container;
 
     protected function setUp(): void
     {
+        parent::setUp();
+
         $this->extension = new RoutingAutoLoaderExtension();
         $this->container = new ContainerBuilder();
+        $this->container->setParameter('kernel.environment', 'test');
     }
 
     public function testLoadConfiguration(): void
@@ -23,7 +32,7 @@ class RoutingAutoLoaderExtensionTest extends TestCase
 
         // 验证服务资源已加载（使用资源配置的方式）
         $this->assertTrue($this->container->hasDefinition('Tourze\RoutingAutoLoaderBundle\Service\RoutingAutoLoaderEnhancer'));
-        
+
         // 验证服务配置正确
         $definition = $this->container->getDefinition('Tourze\RoutingAutoLoaderBundle\Service\RoutingAutoLoaderEnhancer');
         $this->assertEquals('Tourze\RoutingAutoLoaderBundle\Service\RoutingAutoLoaderEnhancer', $definition->getClass());

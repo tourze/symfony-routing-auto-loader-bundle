@@ -1,0 +1,5 @@
+services:
+    -
+        class: Tourze\RoutingAutoLoaderBundle\PHPStan\Rules\BundleControllerRegistrationRule
+        tags:
+            - phpstan.rules.rule

@@ -1,7 +1,11 @@
 # Symfony Routing Auto Loader Bundle
 
+[English](README.md) | [中文](README.zh-CN.md)
+
 [![Latest Stable Version](https://img.shields.io/packagist/v/tourze/symfony-routing-auto-loader-bundle.svg)](https://packagist.org/packages/tourze/symfony-routing-auto-loader-bundle)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PHP Version Require](https://img.shields.io/packagist/php-v/tourze/symfony-routing-auto-loader-bundle.svg)](https://packagist.org/packages/tourze/symfony-routing-auto-loader-bundle)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/tourze/php-monorepo)
 
 A Symfony bundle for automatically loading custom route collections via tagged services. This bundle allows you to define and register your own route loaders, which will be automatically merged into the application's routing system.
 

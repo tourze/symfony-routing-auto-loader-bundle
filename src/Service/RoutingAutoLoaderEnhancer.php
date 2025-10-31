@@ -6,7 +6,7 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsDecorator;
 use Symfony\Component\DependencyInjection\Attribute\AutowireDecorated;
-use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
+use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 use Symfony\Component\Routing\RouteCollection;
 
 #[AsDecorator(decorates: 'routing.loader')]
@@ -14,9 +14,9 @@ class RoutingAutoLoaderEnhancer implements LoaderInterface
 {
     public function __construct(
         #[AutowireDecorated] private readonly LoaderInterface $inner,
-        #[TaggedIterator(tag: RoutingAutoLoaderInterface::TAG_NAME)] private readonly iterable $routingAutoLoaders,
-    )
-    {
+        /** @var iterable<RoutingAutoLoaderInterface> */
+        #[AutowireIterator(tag: RoutingAutoLoaderInterface::TAG_NAME)] private readonly iterable $routingAutoLoaders,
+    ) {
     }
 
     public function load(mixed $resource, ?string $type = null): RouteCollection
